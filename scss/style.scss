@@ -1,0 +1,212 @@
+
+$coloresPrincipales:(
+colorprimario:#EAE509,
+colorsecundario:#7DCE13,
+colorterciario:#5BB318,
+colorcuaternario:#2B7A0B,
+);
+$color_1: white;
+$font-family_1: "Rock Salt", cursive;
+$background-color_1: white;
+$background-color_2: #2B7A0B;
+$background-color_3: #5BB318;
+$border-left-color_1: #09f;
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes loader {
+	0% {
+		height: 12px;
+	}
+	25% {
+		height: 50px;
+	}
+	50% {
+		height: 10px;
+	}
+	75% {
+		height: 25px;
+	}
+	100% {
+		height: 12px;
+	}
+}
+body {
+	background-image: linear-gradient(#eae509, #7dce13);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+footer {
+	background-color: $background-color_1;
+	margin-top: 15px;
+}
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	max-width: 100%;
+}
+.logo-foto {
+	max-width: 60px;
+}
+.card {
+	background-color: map-get($map: $coloresPrincipales, $key: colorcuaternario);
+	margin-bottom: 30px;
+	border-style: solid;
+	border-width: 30px;
+	border-radius: 100px;
+}
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 3px solid purple;
+}
+thead {
+	background: url(leopardskin.jpg);
+	color: $color_1;
+	text-shadow: 1px 1px 1px black;
+	th {
+		font-family: $font-family_1;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+		border: 3px solid purple;
+		&:nth-child(1) {
+			width: 30%;
+		}
+		&:nth-child(2) {
+			width: 20%;
+		}
+		&:nth-child(3) {
+			width: 15%;
+		}
+		&:nth-child(4) {
+			width: 35%;
+		}
+	}
+}
+th {
+	padding: 20px;
+	letter-spacing: 2px;
+}
+td {
+	padding: 20px;
+	letter-spacing: 1px;
+}
+tfoot {
+	background: url(leopardskin.jpg);
+	color: $color_1;
+	text-shadow: 1px 1px 1px black;
+	th {
+		font-family: $font-family_1;
+		text-align: right;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+		border: 3px solid purple;
+	}
+	td {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+		border: 3px solid purple;
+	}
+}
+tbody {
+	td {
+		text-align: center;
+	}
+}
+.spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border-left-color: $border-left-color_1;
+	animation: spin 1s ease infinite;
+}
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 60px;
+	height: 50px;
+	div {
+		width: 12px;
+		background: #888;
+		animation: loader 1.8s linear infinite;
+		&:nth-child(2) {
+			animation-delay: -0.25s;
+		}
+	}
+}
+.popis {
+	min-height: 95vh;
+}
+#bartender {
+	width: 100%;
+}
+#familia {
+	width: 100%;
+}
+#pelotero {
+	width: 100%;
+}
+#grupotrabajo {
+	width: 100%;
+}
+#form-trabajo1 {
+	padding: 11px 11px 11px 11px;
+}
+.form-trabajo {
+	background-color: map-get($map: $coloresPrincipales , $key:colorterciario);
+	border-radius: 4px;
+}
+#reparte {
+	width: 90%;
+	box-shadow: 10px 5px 5px black;
+}
+#contactanos {
+	padding: 11px 11px 11px 11px;
+}
+.contacto {
+	background-color: map-get($map: $coloresPrincipales , $key:colorterciario);
+	border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+	.redes-lista {
+		padding-right: 12px;
+	}
+	main {
+		min-height: 90vh;
+	}
+	.cartas {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+	}
+	#bartender {
+		width: 50%;
+	}
+	#familia {
+		width: 50%;
+	}
+	#pelotero {
+		width: 50%;
+	}
+	#grupotrabajo {
+		width: 50%;
+	}
+	.nosotros-grid {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: auto auto auto auto;
+		grid-column-gap: 12px;
+		margin-left: 130px;
+	}
+	#reparte {
+		width: 90%;
+	}
+}
+
